@@ -1,0 +1,349 @@
+/* Hace que el border y el padding se consideren dentro del alto y ancho del elemento */
+/* Por lo tanto todos los elementos mantendran la misma proporción respecto del alto y ancho */
+* {
+    box-sizing: border-box;
+}
+
+html{
+    cursor: url("img/cursor_flecha_0.png"), auto;
+}
+
+body{
+    
+    height: 100%;
+    background-color:rgb(11, 19, 39);
+    background-image: url("img/fondo_espacio_01.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* margin:0; para sacar todos los bordes del body y que el footer
+    toque los bordes de la pantalla */
+    margin: 0;
+    margin-top: 57px;
+}
+
+/* Corresponde al contorno de la "hoja" que contendrá al CV */
+.hoja_contenedora {
+    margin: 40px;
+    margin-bottom: 200px;
+}
+
+/* Hace que todos los elementos de una fila se mantengan dentro de las mismas proporciones */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Este bloque afecta a cada clase columna (col-x) haciendo que se acomoden hacia la izquierda */
+[class*="col-"] {
+    float: left;
+    display: flex;
+    flex-direction:column;
+    
+}
+
+/* Se crea las clases para tener anchos de columna respecto
+de una división en 12 partes iguales de la página */
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+/* Afecta a cada uno de los bloques en que se divide la estructura del HTML
+Foto de perfil, Resumen, información de contacto / habilidades, educación y experiencia laboral */
+
+.bloque_contenedor {
+    /* El último valor del color corresponde a la opacidad 
+    la cual conviene declarar dentro del backgorund-color para
+    no afectar a otros elementos */
+    background-color: rgba(59, 54, 54, 0.7) ;
+    border-radius:3%;
+    color: white;
+    padding: 20px;
+    margin: 4px;
+}
+
+/* Fuente de los titulos principales */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Michroma';
+    font-weight: bold;
+    background-color: rgb(105, 105, 105, 0.0) ;
+}
+
+.texto_foto {
+    text-align: center;
+    background-color: rgb(105, 105, 105, 0.0) ;
+}
+
+.texto_foto h1{
+    margin-bottom: 5px;
+}
+
+.texto_foto h3 {
+    margin-top: 0;
+}
+
+.texto_descargar {
+    font-family: 'Michroma';
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.texto_descargar:hover {
+    cursor: url("img/cursor_mano_0.png"), auto;
+    color: rgb(234, 148, 147);
+    text-shadow: 0 6px 6px rgb(74, 41, 32);
+}
+
+.iconos {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    width:100%;
+    
+}
+
+.iconos a:hover {
+    cursor: url("img/cursor_mano_0.png"), auto;
+    border-radius:50%;
+    box-shadow: 0px 4px 4px rgb(84, 105, 53);
+}
+
+.iconos a{
+    padding: 8px;
+}
+
+.iconos a svg{
+    width: 2em;
+    height: 2em;
+}
+
+/* Texto de parrafo */
+p {
+    color: rgb(183, 195, 187);
+    font-family: 'Bebas Neue';
+    font-size: larger;
+    margin-top: 1px;
+    background-color: rgb(105, 105, 105, 0.0) ;
+}
+
+/* Título de parrafo */
+.titulo_parrafo {
+    color: rgb(148, 170, 185);
+    font-family: 'Bebas Neue';
+    font-size: x-large;
+    font-weight: bold;
+    margin-bottom: 1px;
+    background-color: rgb(105, 105, 105, 0.0) ;
+}
+
+
+/*-------------------------------------- NAVIGATION ------------------------------------*/
+
+nav ul {
+    display: flex;
+    justify-content:space-between;
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 0%;
+}
+
+nav ul li {
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li a{
+    text-align: center;
+    font-size: 0.9rem;
+    font-family: 'Michroma';
+    padding: 0.3rem;
+    color: white;
+}
+
+nav ul li a:hover{
+    color: rgb(201, 234, 147);
+    text-shadow: 0 4px 4px rgb(84, 105, 53);
+    cursor: url("img/cursor_mano_0.png"), auto;
+}
+
+.navigation-responsive {
+    background-color: rgb(95, 111, 121);
+    color:#94aab9;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: none;
+    text-align: center;
+    position: fixed;
+    width:100%;
+    
+}
+
+.navigation-responsive:hover {
+    cursor: url("img/cursor_mano_0.png"), auto;
+    background-color: #333;
+    box-shadow: 0px 4px 4px rgb(84, 105, 53);
+}
+
+header{
+    background-color: rgb(46, 48, 43, 0.9);
+    position: fixed;
+    margin:0;
+    top: 0;
+    width: 100%;
+    margin-bottom: 100px;
+    left: 0;
+    z-index: 150;
+}
+
+.link {
+    font-family: 'Michroma';
+    color: white;
+    text-decoration: none;
+}
+
+.footer{
+    background-color: rgba(0, 0, 0) ;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    position: relative;
+}
+
+.footer h4{
+    margin:0;
+}
+
+.titulo_elegido{
+    color:rgb(201, 234, 147);
+    text-shadow: 0 4px 4px rgb(84, 105, 53);
+}
+
+.contenedor_elegido{
+    box-shadow: 4px 4px 4px rgb(84, 105, 53);
+}
+
+#foto_perfil {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+#foto_perfil img{
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+    border: 8px solid rgb(61, 78, 87);
+}
+
+/* Scroll to top */
+#scroll-to-top-btn {
+    display: none;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 99;
+    font-size: 10px;
+    border: none;
+    outline: none;
+    background-color: rgb(95, 111, 121);
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+  }
+  
+  #scroll-to-top-btn:hover {
+    cursor: url("img/cursor_mano_0.png"), auto;
+    background-color: #333;
+    box-shadow: 0px 4px 4px rgb(84, 105, 53);
+
+  }
+
+  /* Hasta 990px */
+  @media (max-width: 990px){
+
+    .titulo_iluminado{
+        font-size: 0.8rem;
+    }
+
+    nav ul li a{
+        font-size: 0.7rem;
+    }
+  }
+
+  /* Hasta 800px */
+  @media (max-width: 800px){
+
+    .iconos{
+        display:inline-block;
+        text-align: center;
+    }
+
+    .iconos a svg{
+        width: 1em;
+        height: 1em;
+    }
+
+    nav ul {
+        display: none;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .navigation-responsive{
+        display: block;
+    }
+
+    nav.responsive{
+        display: block;
+        position: absolute;
+        top: 29px;
+        background-color: #252A2E;
+        width: 100%;
+    }
+    nav.responsive ul{
+        display: block !important;
+        margin: 0;
+    }
+    nav.responsive ul li{
+        padding: 5px 0px;
+        border-bottom: 1px solid #5b6154;
+        width:100%;
+    }
+
+    .row .col-4 {
+        width:50%;
+    }
+
+    .row .col-8 {
+        width: 50%;
+    }
+
+    #scroll-to-top-btn {
+        padding: 2px;
+    }
+
+  }
+
+  /* Hasta 480px */
+  @media (max-width: 480px){
+    .row .col-4 {
+        width:100%;
+    }
+
+    .row .col-8 {
+        width: 100%;
+    }
+  }
